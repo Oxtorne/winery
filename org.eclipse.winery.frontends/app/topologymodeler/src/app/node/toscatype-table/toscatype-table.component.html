@@ -18,6 +18,7 @@
         <th>Name</th>
         <th>DA-Ref</th>
         <th>Type</th>
+        <th>Open URI</th>
     </tr>
     </thead>
     <tbody>
@@ -36,6 +37,10 @@
             [class.cell-with-comment]="isEllipsisActive(datype)">
             <div #datype (click)="clickArtifactType(da.artifactType)">{{ da.artifactType | localname }}</div>
             <span class="cell-comment">{{ da.artifactType | localname }}</span>
+        </td>
+        <td class="openURI-table-td"
+            [class.cell-with-comment]="isEllipsisActive(datype)">
+            <button (click)="openURIOfDA($event);"type="button" class="btn btn-link btn-xs">code</button>
         </td>
     </tr>
     </tbody>

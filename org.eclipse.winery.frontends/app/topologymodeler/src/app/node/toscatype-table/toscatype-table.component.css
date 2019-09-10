@@ -99,3 +99,10 @@ tr:nth-child(even) {
     -ms-user-select: all; /* IE 10+ */
     user-select: all;
 }
+
+.btn-group-xs > .btn, .btn-xs {
+    padding: .2rem .6rem;
+    font-size: .600rem;
+    line-height: .4;
+    border-radius: .2rem;
+}

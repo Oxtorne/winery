@@ -42,7 +42,7 @@ export class DeploymentArtifactsComponent implements OnInit {
     public toggleModal($event) {
         this.toggleModalHandler.emit(this.currentNodeData);
     }
-
+    
     ngOnInit() {
     }
 }
