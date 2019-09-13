@@ -36,8 +36,13 @@ export class WinerysPropertiesDefinition {
     isDerivedFromXSD = false;
 }
 
+export class ExternalWorkspaceUrlDefinition {
+    externalWorkspaceUrl: string = null;
+}
+
 export interface PropertiesDefinitionsResourceApiData {
     propertiesDefinition: PropertiesDefinition;
     winerysPropertiesDefinition: WinerysPropertiesDefinition;
     selectedValue: PropertiesDefinitionEnum;
+    externalWorkspaceUrlDef: ExternalWorkspaceUrlDefinition;
 }

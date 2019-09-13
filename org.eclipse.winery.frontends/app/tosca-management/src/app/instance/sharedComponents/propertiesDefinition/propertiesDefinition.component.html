@@ -38,7 +38,9 @@
             <label for="customkv" class="cursorpointer">Custom key/value pairs</label>
         </div>
         <div class="right">
-            <button class="btn btn-primary" name="save" [disabled]="!sharedData?.currentVersion?.editable" (click)="save()">Save</button>
+            <button class="btn btn-primary"
+                    name="save" 
+                    [disabled]="!sharedData?.currentVersion?.editable" >Save</button>
         </div>
     </div>
     <div>
@@ -76,6 +78,22 @@
                     </div>
                 </tab>
             </tabset>
+        </div>
+    </div>
+    <div class="input-group mb-3">
+        <label>(Optional) Add external workspace URL for deployment artifacts here: </label>
+        <input type="text"
+               id="externalWorkspaceUrl"
+               class="form-control"
+               autocomplete=off
+               [(ngModel)]="externalURL">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" 
+                    type="button" 
+                    [disabled]="!sharedData?.currentVersion?.editable" 
+                    (click)="applyUrl()"> 
+                    Save Url
+            </button>
         </div>
     </div>
 </div>
@@ -142,3 +160,16 @@
                          [okButtonLabel]="'Delete'">
     </winery-modal-footer>
 </winery-modal>
+
+<winery-modal bsModal #confirmSaveUrlModal="bs-modal" [modalRef]="confirmSaveUrlModal">
+    <winery-modal-header [title]="'Apply Url changes'">
+    </winery-modal-header>
+    <winery-modal-body>
+        New external Workspace URL: {{externalURL}}
+    </winery-modal-body>
+    <winery-modal-footer (onOk)="applyUrlConfirmed();"
+                         [closeButtonLabel]="'Cancel'"
+                         [okButtonLabel]="'Apply'">
+    </winery-modal-footer>
+</winery-modal>
+

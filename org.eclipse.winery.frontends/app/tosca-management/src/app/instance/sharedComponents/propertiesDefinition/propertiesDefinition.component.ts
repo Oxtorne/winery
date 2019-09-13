@@ -16,7 +16,7 @@ import { InstanceService } from '../../instance.service';
 import { PropertiesDefinitionService } from './propertiesDefinition.service';
 import {
     PropertiesDefinition, PropertiesDefinitionEnum, PropertiesDefinitionKVElement, PropertiesDefinitionsResourceApiData,
-    WinerysPropertiesDefinition
+    WinerysPropertiesDefinition, ExternalWorkspaceUrlDefinition, 
 } from './propertiesDefinitionsResourceApiData';
 import { SelectData } from '../../../model/selectData';
 import { isNullOrUndefined } from 'util';
@@ -39,23 +39,25 @@ export class PropertiesDefinitionComponent implements OnInit {
 
     propertiesEnum = PropertiesDefinitionEnum;
     loading = true;
-
     resourceApiData: PropertiesDefinitionsResourceApiData;
     selectItems: SelectData[];
     activeElement = new SelectData();
     selectedCell: WineryRowData;
     elementToRemove: any = null;
+    externalURL: string = "http://www.example.com";
+
     columns: Array<WineryTableColumn> = [
         { title: 'Name', name: 'key', sort: true },
         { title: 'Type', name: 'type', sort: true },
     ];
     newProperty: PropertiesDefinitionKVElement = new PropertiesDefinitionKVElement();
-
     validatorObject: WineryValidatorObject;
     @ViewChild('confirmDeleteModal') confirmDeleteModal: ModalDirective;
     @ViewChild('addModal') addModal: ModalDirective;
+    @ViewChild('confirmSaveUrlModal') confirmSaveUrlModal: ModalDirective;
     @ViewChild('nameInputForm') nameInputForm: ElementRef;
-
+   
+    
     constructor(public sharedData: InstanceService, private service: PropertiesDefinitionService,
                 private notify: WineryNotificationService) {
     }
@@ -175,7 +177,18 @@ export class PropertiesDefinitionComponent implements OnInit {
                 );
         }
     }
-
+    
+    applyUrl(): void {
+        this.confirmSaveUrlModal.show();
+        
+    }
+    
+    applyUrlConfirmed(): void {
+        this.confirmSaveUrlModal.hide();
+    }
+    
+    
+    
     /**
      * handler for clicks on remove button
      * @param data
@@ -243,7 +256,7 @@ export class PropertiesDefinitionComponent implements OnInit {
     onAddModalShown() {
         this.nameInputForm.nativeElement.focus();
     }
-
+    
     // endregion
 
     // region ########## Private Methods ##########
@@ -352,6 +365,7 @@ export class PropertiesDefinitionComponent implements OnInit {
         this.loading = false;
         this.notify.error(error.message, 'Error');
     }
+
 
     // endregion
 }
