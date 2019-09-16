@@ -80,22 +80,7 @@
             </tabset>
         </div>
     </div>
-    <div class="input-group mb-3">
-        <label>(Optional) Add external workspace URL for deployment artifacts here: </label>
-        <input type="text"
-               id="externalWorkspaceUrl"
-               class="form-control"
-               autocomplete=off
-               [(ngModel)]="externalURL">
-        <div class="input-group-append">
-            <button class="btn btn-outline-secondary" 
-                    type="button" 
-                    [disabled]="!sharedData?.currentVersion?.editable" 
-                    (click)="applyUrl()"> 
-                    Save Url
-            </button>
-        </div>
-    </div>
+
 </div>
 
 <winery-modal bsModal #addModal="bs-modal" [modalRef]="addModal"
