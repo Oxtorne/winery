@@ -20,7 +20,7 @@ import { WineryLoaderModule } from '../wineryLoader/wineryLoader.module';
 import { FormsModule } from '@angular/forms';
 import { TabsModule } from 'ngx-bootstrap';
 import { WineryPipesModule } from '../wineryPipes/wineryPipes.module';
-import { WineryWorkspaceComponent } from '../wineryReadmeModule/wineryWorkspace.component';
+import { WineryWorkspaceComponent } from '../wineryWorkspaceModule/wineryWorkspace.component';
 
 @NgModule({
     imports: [

@@ -25,6 +25,7 @@ import {PropertiesDefinitionComponent} from '../../instance/sharedComponents/pro
 import {WineryReadmeComponent} from '../../wineryReadmeModule/wineryReadme.component';
 import {WineryLicenseComponent} from '../../wineryLicenseModule/wineryLicense.component';
 import {ImplementationsComponent} from '../../instance/sharedComponents/implementations/implementations.component';
+import {WineryWorkspaceComponent} from '../../wineryWorkspaceModule/wineryWorkspace.component';
 
 const toscaType = ToscaTypes.ArtifactType;
 
@@ -42,6 +43,7 @@ const artifactTypeRoutes: Routes = [
             {path: 'inheritance', component: InheritanceComponent},
             {path: 'documentation', component: DocumentationComponent},
             {path: 'xml', component: EditXMLComponent},
+            {path: 'workspace', component: WineryWorkspaceComponent},
             {path: 'templates', component: ImplementationsComponent},
             {path: '', redirectTo: 'readme', pathMatch: 'full'}
         ]

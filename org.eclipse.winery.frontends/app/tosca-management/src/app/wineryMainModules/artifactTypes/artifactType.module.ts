@@ -16,12 +16,14 @@ import {ArtifactTypeRouterModule} from './artifactTypeRouter.module';
 import {CommonModule} from '@angular/common';
 import {WineryLicenseModule} from '../../wineryLicenseModule/wineryLicense.module';
 import {WineryReadmeModule} from '../../wineryReadmeModule/wineryReadme.module';
+import {WineryWorkspaceModule} from '../../wineryWorkspaceModule/wineryWorkspace.module';
 
 @NgModule({
     imports: [
         CommonModule,
         ArtifactTypeRouterModule,
         WineryReadmeModule,
+        WineryWorkspaceModule,
         WineryLicenseModule
     ],
 })

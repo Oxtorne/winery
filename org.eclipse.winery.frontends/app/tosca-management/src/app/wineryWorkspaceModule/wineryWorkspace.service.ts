@@ -30,14 +30,14 @@ export class WorkspaceService {
     getData(): Observable<string> {
         const headers = new HttpHeaders({ 'Accept': 'text/plain' });
         return this.http.get(
-            backendBaseURL + this.sharedData.path + '/workspaceurl.txt',
+            backendBaseURL + this.sharedData.path + '/workspaceurl.md',
             { headers: headers, responseType: 'text' }
         );
     }
 
     save(workspaceUrl: String): Observable<HttpResponse<string>> {
         return this.http.put<string>(
-            backendBaseURL + this.sharedData.path + '/workspaceurl.txt',
+            backendBaseURL + this.sharedData.path + '/workspaceurl.md',
             workspaceUrl,
             { observe: 'response' });
     }

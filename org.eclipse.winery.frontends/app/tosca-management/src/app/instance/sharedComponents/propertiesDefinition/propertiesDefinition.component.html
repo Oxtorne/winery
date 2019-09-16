@@ -146,15 +146,5 @@
     </winery-modal-footer>
 </winery-modal>
 
-<winery-modal bsModal #confirmSaveUrlModal="bs-modal" [modalRef]="confirmSaveUrlModal">
-    <winery-modal-header [title]="'Apply Url changes'">
-    </winery-modal-header>
-    <winery-modal-body>
-        New external Workspace URL: {{externalURL}}
-    </winery-modal-body>
-    <winery-modal-footer (onOk)="applyUrlConfirmed();"
-                         [closeButtonLabel]="'Cancel'"
-                         [okButtonLabel]="'Apply'">
-    </winery-modal-footer>
-</winery-modal>
+
 
