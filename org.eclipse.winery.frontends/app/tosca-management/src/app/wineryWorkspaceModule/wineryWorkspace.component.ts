@@ -14,13 +14,13 @@
  *  *******************************************************************************
  *******************************************************************************/
 
-import { Component, OnInit } from '@angular/core';
-import { ReadmeService } from '../wineryReadmeModule/wineryReadme.service';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ToscaTypes } from '../model/enums';
 import { WineryNotificationService } from '../wineryNotificationModule/wineryNotification.service';
 import { InstanceService } from '../instance/instance.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { WorkspaceService } from './wineryWorkspace.service';
+import { ModalDirective } from 'ngx-bootstrap';
 
 @Component({
     templateUrl: 'wineryWorkspace.component.html',
@@ -37,6 +37,8 @@ export class WineryWorkspaceComponent implements OnInit {
     externalUrlAvailable = true;
     toscaType: ToscaTypes;
 
+    @ViewChild('confirmSaveUrlModal') confirmSaveUrlModal: ModalDirective;
+    
     constructor(private service: WorkspaceService, private notify: WineryNotificationService, public sharedData: InstanceService) {
         this.toscaType = this.sharedData.toscaComponent.toscaType;
 
@@ -57,6 +59,11 @@ export class WineryWorkspaceComponent implements OnInit {
             () => this.handleSave(),
             error => this.handleError(error)
         );
+        this.confirmSaveUrlModal.hide();
+    }
+    
+    onKeyUpOrButtonClicked(event: any) {
+        this.confirmSaveUrlModal.show();
     }
 
     private handleError(error: HttpErrorResponse) {

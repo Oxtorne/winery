@@ -1,9 +1,3 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
-import { InstanceService } from '../instance/instance.service';
-import { Observable } from 'rxjs';
-import { backendBaseURL } from '../configuration';
-
 /********************************************************************************
  * *******************************************************************************
  *  * Copyright (c) ${YEAR} Contributors to the Eclipse Foundation
@@ -19,6 +13,12 @@ import { backendBaseURL } from '../configuration';
  *  * SPDX-License-Identifier: EPL-2.0 OR Apache-2.0
  *  *******************************************************************************
  *******************************************************************************/
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { InstanceService } from '../instance/instance.service';
+import { Observable } from 'rxjs';
+import { backendBaseURL } from '../configuration';
+
 
 @Injectable()
 export class WorkspaceService {

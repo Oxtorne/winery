@@ -585,5 +585,21 @@ public abstract class AbstractComponentInstanceResource implements Comparable<Ab
         RepositoryFileReference ref = new RepositoryFileReference(this.id, Util.URLdecode("README.md"));
         return RestUtils.putContentToFile(ref, data, MediaType.TEXT_PLAIN_TYPE);
     }
+
+    @GET
+    @Path("workspaceurl.md")
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response getWorkspace() {
+        RepositoryFileReference ref = new RepositoryFileReference(this.id, Util.URLdecode("workspaceurl.md"));
+        return RestUtils.returnRepoPath(ref, null);
+    }
+    
+    @PUT
+    @Path("workspaceurl.md")
+    @Consumes(MediaType.TEXT_PLAIN)
+    public Response putWorkspace(String data) {
+        RepositoryFileReference ref = new RepositoryFileReference(this.id, Util.URLdecode("workspaceurl.md"));
+        return RestUtils.putContentToFile(ref, data, MediaType.TEXT_PLAIN_TYPE);
+    }
 }
 

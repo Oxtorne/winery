@@ -13,14 +13,30 @@
   ~  * SPDX-License-Identifier: EPL-2.0 OR Apache-2.0
   ~  ********************************************************************************/
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-<div class="input-group mb-3">
+<div class="left">
     <label>(Optional) Add external workspace URL for deployment artifacts here: </label>
     <input type="text"
            id="externalWorkspaceUrl"
            class="form-control"
            autocomplete=off
-           >
-    <div class="input-group-append">
+           input [(ngModel)]="externalUrl"
+           input (keyup.enter)="onKeyUpOrButtonClicked($event)">
+    <div class="right">
+        <button class="btn btn-primary"
+                name="save"
+                [disabled]="!sharedData?.currentVersion?.editable"
+                (click)="onKeyUpOrButtonClicked($event)">Save</button>
     </div>
 </div>
 
+<winery-modal bsModal #confirmSaveUrlModal="bs-modal" [modalRef]="confirmSaveUrlModal">
+    <winery-modal-header [title]="'Apply Url changes'">
+    </winery-modal-header>
+    <winery-modal-body>
+        New external Workspace URL: {{externalUrl}}
+    </winery-modal-body>
+    <winery-modal-footer (onOk)="saveExternalUrl();"
+                         [closeButtonLabel]="'Cancel'"
+                         [okButtonLabel]="'Apply'">
+    </winery-modal-footer>
+</winery-modal>

@@ -44,7 +44,6 @@ export class PropertiesDefinitionComponent implements OnInit {
     activeElement = new SelectData();
     selectedCell: WineryRowData;
     elementToRemove: any = null;
-    externalURL: string = "http://www.example.com";
 
     columns: Array<WineryTableColumn> = [
         { title: 'Name', name: 'key', sort: true },
@@ -54,7 +53,6 @@ export class PropertiesDefinitionComponent implements OnInit {
     validatorObject: WineryValidatorObject;
     @ViewChild('confirmDeleteModal') confirmDeleteModal: ModalDirective;
     @ViewChild('addModal') addModal: ModalDirective;
-    @ViewChild('confirmSaveUrlModal') confirmSaveUrlModal: ModalDirective;
     @ViewChild('nameInputForm') nameInputForm: ElementRef;
    
     
@@ -177,16 +175,6 @@ export class PropertiesDefinitionComponent implements OnInit {
                 );
         }
     }
-    
-    applyUrl(): void {
-        this.confirmSaveUrlModal.show();
-        
-    }
-    
-    applyUrlConfirmed(): void {
-        this.confirmSaveUrlModal.hide();
-    }
-    
     
     
     /**

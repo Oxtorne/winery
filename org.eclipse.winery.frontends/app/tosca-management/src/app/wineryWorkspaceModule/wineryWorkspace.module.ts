@@ -21,6 +21,7 @@ import { FormsModule } from '@angular/forms';
 import { TabsModule } from 'ngx-bootstrap';
 import { WineryPipesModule } from '../wineryPipes/wineryPipes.module';
 import { WineryWorkspaceComponent } from '../wineryWorkspaceModule/wineryWorkspace.component';
+import { WineryModalModule } from '../wineryModalModule/winery.modal.module';
 
 @NgModule({
     imports: [
@@ -28,7 +29,8 @@ import { WineryWorkspaceComponent } from '../wineryWorkspaceModule/wineryWorkspa
         WineryLoaderModule,
         FormsModule,
         TabsModule,
-        WineryPipesModule
+        WineryPipesModule,
+        WineryModalModule
     ],
     exports: [
         WineryWorkspaceComponent
