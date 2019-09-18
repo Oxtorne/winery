@@ -187,7 +187,7 @@ export class ToscatypeTableComponent implements OnInit, OnChanges {
         window.open(url, '_blank');
     }
 
-    openWorkspaceOfDA($event) {
+        //artifactType: string as input
         window.open("https://che.openshift.io/dashboard/#/ide/oxtorne/wksp-ixlb", "_blank");
     }
 
