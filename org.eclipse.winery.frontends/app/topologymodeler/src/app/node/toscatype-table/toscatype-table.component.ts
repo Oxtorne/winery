@@ -186,7 +186,8 @@ export class ToscatypeTableComponent implements OnInit, OnChanges {
             + '/' + this.getLocalName(reqOrCapType);
         window.open(url, '_blank');
     }
-
+    
+    openExternalWorkspaceUrl(){
         //artifactType: string as input
         window.open("https://che.openshift.io/dashboard/#/ide/oxtorne/wksp-ixlb", "_blank");
     }
