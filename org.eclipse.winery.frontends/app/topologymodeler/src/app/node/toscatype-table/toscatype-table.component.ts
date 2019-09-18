@@ -187,7 +187,13 @@ export class ToscatypeTableComponent implements OnInit, OnChanges {
         window.open(url, '_blank');
     }
 
-    openURIOfDA($event) {
+    openUrlOfArtifact() {
+        //artifactType: string as input
+        //const url = this.backendService.configuration.uiURL
+          //  + 'artifacttypes/'
+           // + encodeURIComponent(encodeURIComponent(this.getNamespace(artifactType)))
+           // + '/' + this.getLocalName(artifactType);
+        //window.open(url, '');
         window.open("https://che.openshift.io/dashboard/#/ide/oxtorne/wksp-ixlb", "_blank");
     }
 
